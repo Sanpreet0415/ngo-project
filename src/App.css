@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.ngo-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-right a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.donate-btn {
+  background: red;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e3f2fd, #fff);
+}
+
+/* Sections */
+.section {
+  padding: 40px 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+/* Cards */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* News */
+.news-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.news-card {
+  background: #eef;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Reviews */
+.review-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.review {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Donation */
+.donation-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: red;
+  color: white;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+}
