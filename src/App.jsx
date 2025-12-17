@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import logo from "./assets/logo.png";
+import Donation from "./Donation";
 
 export default function App() {
   return (
@@ -89,11 +90,12 @@ export default function App() {
       </section>
 
       {/* Donation Section */}
-      <section id="donate" className="donation-float">
+      {/* <section id="donate" className="donation-float">
         <h3>Support Our Cause</h3>
         <p>Your donation helps us build better lives.</p>
         <button>Donate Now</button>
-      </section>
+      </section> */}
+      <Donation />
 
       <footer>© 2025 Chhattisgarh State Council for Child Welfare</footer>
     </div>

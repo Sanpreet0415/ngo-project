@@ -1,10 +1,11 @@
+/* Global */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f6f8;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -12,6 +13,9 @@ body {
   padding: 12px 20px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-left {
@@ -34,23 +38,29 @@ body {
   margin-left: 15px;
   text-decoration: none;
   color: #333;
+  font-weight: 500;
+}
+
+.nav-right a:hover {
+  color: red;
 }
 
 .donate-btn {
   background: red;
   color: white;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
+  font-weight: bold;
 }
 
-/* Hero */
+/* ================= HERO ================= */
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #e3f2fd, #fff);
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
 }
 
-/* Sections */
+/* ================= SECTIONS ================= */
 .section {
   padding: 40px 20px;
   background: white;
@@ -58,7 +68,7 @@ body {
   border-radius: 12px;
 }
 
-/* Cards */
+/* ================= CARDS ================= */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -71,7 +81,7 @@ body {
   border-radius: 12px;
 }
 
-/* News */
+/* ================= NEWS ================= */
 .news-grid {
   display: grid;
   gap: 10px;
@@ -83,7 +93,7 @@ body {
   border-radius: 10px;
 }
 
-/* Reviews */
+/* ================= REVIEWS ================= */
 .review-grid {
   display: grid;
   gap: 10px;
@@ -95,20 +105,74 @@ body {
   border-radius: 10px;
 }
 
-/* Donation */
+/* ================= FLOAT DONATION ================= */
 .donation-float {
   position: fixed;
   right: 20px;
   bottom: 20px;
   background: red;
   color: white;
-  padding: 20px;
+  padding: 16px 20px;
   border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Footer */
+/* ================= DONATION SECTION ================= */
+.donation-section {
+  padding: 40px 20px;
+  margin: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.donation-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.donation-image {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.donation-text {
+  text-align: left;
+  font-size: 14px;
+}
+
+.donation-note {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 20px;
   color: gray;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .ngo-name {
+    font-size: 12px;
+  }
+
+  .nav-right a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .donation-text {
+    text-align: center;
+  }
 }
