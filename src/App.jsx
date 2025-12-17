@@ -7,7 +7,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="navbar">
         <div className="nav-left">
-          <img src="public/logo.png" alt="NGO Logo" className="logo" />
+          <img src="image/logo.png" alt="NGO Logo" className="logo" />
           <span className="ngo-name">
             Chhattisgarh State Council for Child Welfare
           </span>
