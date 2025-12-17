@@ -84,7 +84,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ✅ DONATION SECTION (THIS WAS MISSING) */}
+      {/* ✅ Donation section */}
       <Donation />
 
       <footer>© 2025 Chhattisgarh State Council for Child Welfare</footer>
