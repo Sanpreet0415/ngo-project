@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import logo from "./assets/logo.png";
 
 export default function App() {
   return (
@@ -7,7 +8,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="navbar">
         <div className="nav-left">
-          <img src="image/logo.png" alt="NGO Logo" className="logo" />
+          <img src={logo} alt="NGO Logo" className="logo" />
           <span className="ngo-name">
             Chhattisgarh State Council for Child Welfare
           </span>
@@ -35,8 +36,7 @@ export default function App() {
         <h2>About Us</h2>
         <p>
           We work for the welfare, rehabilitation, education, and empowerment of
-          specially-abled children. Our programs focus on inclusive growth,
-          confidence building, and community participation.
+          specially-abled children.
         </p>
       </section>
 
