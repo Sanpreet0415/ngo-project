@@ -14,6 +14,7 @@ export default function App() {
             Chhattisgarh State Council for Child Welfare
           </span>
         </div>
+
         <div className="nav-right">
           <a href="#about">About Us</a>
           <a href="#news">News</a>
@@ -24,15 +25,13 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="hero">
-        <h1 className="fade-in">Working for Specially-Abled Children</h1>
-        <p className="fade-in delay">
-          Empowering children with care, education & dignity
-        </p>
+        <h1>Working for Specially-Abled Children</h1>
+        <p>Empowering children with care, education & dignity</p>
       </section>
 
-      {/* About Us */}
+      {/* About */}
       <section id="about" className="section">
         <h2>About Us</h2>
         <p>
@@ -41,25 +40,25 @@ export default function App() {
         </p>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission */}
       <section id="mission" className="section grid-2">
         <div className="card">
           <h3>Our Mission</h3>
           <p>
             To provide inclusive education, healthcare, therapy, and skill
-            development for every differently-abled child.
+            development.
           </p>
         </div>
         <div className="card">
           <h3>Our Vision</h3>
           <p>
-            A society where every child lives with dignity, independence, and
-            equal opportunities.
+            A society where every child lives with dignity and equal
+            opportunity.
           </p>
         </div>
       </section>
 
-      {/* News Section */}
+      {/* News */}
       <section id="news" className="section">
         <h2>Latest News & Activities</h2>
         <div className="news-grid">
@@ -69,32 +68,23 @@ export default function App() {
           <div className="news-card">
             Inauguration of speech & hearing rehabilitation centre
           </div>
-          <div className="news-card">
-            Newspaper & media coverage of NGO initiatives
-          </div>
+          <div className="news-card">Media coverage of NGO initiatives</div>
         </div>
       </section>
 
-      {/* Review Section */}
-      <section className="section reviews">
+      {/* Reviews */}
+      <section className="section">
         <h2>Parents Reviews</h2>
         <div className="review-grid">
+          <div className="review">“My child has shown great improvement.”</div>
           <div className="review">
-            “My child has shown great improvement and confidence.”
+            “Supportive staff and positive environment.”
           </div>
-          <div className="review">
-            “Supportive staff and very positive environment.”
-          </div>
-          <div className="review">“This NGO has changed our child’s life.”</div>
+          <div className="review">“This NGO changed our child’s life.”</div>
         </div>
       </section>
 
-      {/* Donation Section */}
-      {/* <section id="donate" className="donation-float">
-        <h3>Support Our Cause</h3>
-        <p>Your donation helps us build better lives.</p>
-        <button>Donate Now</button>
-      </section> */}
+      {/* ✅ DONATION SECTION (THIS WAS MISSING) */}
       <Donation />
 
       <footer>© 2025 Chhattisgarh State Council for Child Welfare</footer>

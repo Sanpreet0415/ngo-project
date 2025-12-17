@@ -11,7 +11,7 @@ export default function Donation() {
       <div className="donation-content">
         <img
           src={donationImg}
-          alt="Donation QR and Bank Details"
+          alt="Donation QR Code"
           className="donation-image"
         />
 
@@ -24,7 +24,7 @@ export default function Donation() {
           <p>A/C No: 015722010000793</p>
           <p>IFSC: UBIN0901571</p>
           <p className="donation-note">
-            Donations are eligible for tax exemption under section 80G
+            Donations eligible for tax exemption under Section 80G
           </p>
         </div>
       </div>
