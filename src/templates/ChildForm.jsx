@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./ChildForm.css"
+import "./ChildForm.css";
+
 export default function ChildForm() {
   const [formData, setFormData] = useState({
     parent_name: "",
@@ -10,6 +11,8 @@ export default function ChildForm() {
     condition_description: ""
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,50 +22,122 @@ export default function ChildForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    await fetch("http://localhost:5000/submit-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch("http://localhost:5000/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-    alert("Data saved to MongoDB");
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
 
-    setFormData({
-      parent_name: "",
-      contact_number: "",
-      child_name: "",
-      age: "",
-      disability: "Autism",
-      condition_description: ""
-    });
+      alert("Form submitted successfully. Data saved.");
+
+      setFormData({
+        parent_name: "",
+        contact_number: "",
+        child_name: "",
+        age: "",
+        disability: "Autism",
+        condition_description: ""
+      });
+    } catch (error) {
+      alert("Error submitting form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="parent_name" placeholder="Parent Name" onChange={handleChange} value={formData.parent_name} required />
-      <input name="contact_number" placeholder="Contact Number" onChange={handleChange} value={formData.contact_number} required />
-      <input name="child_name" placeholder="Child Name" onChange={handleChange} value={formData.child_name} required />
-      <input name="age" type="number" placeholder="Age" onChange={handleChange} value={formData.age} required />
+    <div className="child-form-wrapper">
+      <h2>Child Registration / Contact Form</h2>
+      <p>Please provide accurate details for better assistance.</p>
 
-      <select name="disability" onChange={handleChange} value={formData.disability}>
-        <option value="Autism">Autism</option>
-        <option value="Speech Impairment">Speech Impairment</option>
-        <option value="Hearing Impairment">Hearing Impairment</option>
-        <option value="Physical Disability">Physical Disability</option>
-      </select>
+      <form className="child-form" onSubmit={handleSubmit}>
+        <label>
+          Parent / Guardian Name
+          <input
+            type="text"
+            name="parent_name"
+            value={formData.parent_name}
+            onChange={handleChange}
+            required
+          />
+        </label>
 
-      <textarea
-        name="condition_description"
-        placeholder="Describe condition"
-        onChange={handleChange}
-        value={formData.condition_description}
-        required
-      />
+        <label>
+          Contact Number
+          <input
+            type="tel"
+            name="contact_number"
+            value={formData.contact_number}
+            onChange={handleChange}
+            required
+            pattern="[0-9]{10}"
+            placeholder="10-digit mobile number"
+          />
+        </label>
 
-      <button type="submit">Submit</button>
-    </form>
+        <label>
+          Child Name
+          <input
+            type="text"
+            name="child_name"
+            value={formData.child_name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label>
+          Age
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            required
+            min="1"
+          />
+        </label>
+
+        <label>
+          Disability Type
+          <select
+            name="disability"
+            value={formData.disability}
+            onChange={handleChange}
+          >
+            <option value="Autism">Autism</option>
+            <option value="Speech Impairment">Speech Impairment</option>
+            <option value="Hearing Impairment">Hearing Impairment</option>
+            <option value="Physical Disability">Physical Disability</option>
+            <option value="Multiple Disabilities">Multiple Disabilities</option>
+          </select>
+        </label>
+
+        <label>
+          Condition Description
+          <textarea
+            name="condition_description"
+            value={formData.condition_description}
+            onChange={handleChange}
+            rows="4"
+            required
+            placeholder="Briefly describe the child’s condition or needs"
+          />
+        </label>
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Submit Form"}
+        </button>
+      </form>
+    </div>
   );
 }
